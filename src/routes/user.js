@@ -56,7 +56,7 @@ router.put('/users/:id', (req, res) => {
 router.delete('/users/:id', (req, res) => {
     const {id} = req.params;
     userSchema
-        .remove(id)
+        .remove({_id: id})
         .then((data)=> res.json(data))
         .catch((error)=> console.error({message: error}))
 });
